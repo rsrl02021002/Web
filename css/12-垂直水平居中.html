@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .box{
+
+      width: 500px;
+
+      height: 500px;
+
+      border:1px solid black;
+
+      margin: 0 auto;
+
+      position: relative;
+      /* 父类使用relative定位 */
+      /* 相对原本的位置进行定位 */
+
+    }
+
+    .div1{
+
+      width: 100px;
+
+      height: 100px;
+
+      background-color: red;
+
+      position: absolute;
+      /* 子类使用position定位 */
+      /* 相对于不是static的父类进行定位 */
+
+      left:50%;
+
+      top:50%;
+
+      margin-left: -50px;
+      /* 被定位的物体的一般宽度 */
+      margin-top:-50px;
+      /* 被定位的物体的一半高度 */
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box">
+
+    <div class="div1"></div>
+
+  </div>
+
+</body>
+
+</html>
