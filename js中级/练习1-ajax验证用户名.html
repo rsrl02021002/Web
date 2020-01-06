@@ -26,16 +26,23 @@
 
     <script>
         $("#inp").on("keyup",function(){
+            //选择器，绑定事件，鼠标事件，自定义功能
             var thisVal = $(this).val();
+            //新建一个数据，赋值当前输入框的值
             var infoText = "可用";
+            //新建一个数据，赋值为“可用”
             $.get("https://api.myjson.com/bins/l8pz0",function(res){
+            //调用$.get()方法，括号里为json文件，自定义的功能
                 var names = res.name;
+                //新建一个数据，赋值为res的name
                 for(var i=0;i<names.length;i++){
                     if(names[i] == thisVal){
                         infoText = "不可用";
                     }
                 }
+                //循环遍历name数组，条件语句匹配是否有相同的文本内容，如果有将infoText值改为“不可用”
                 $("#info").text(infoText);
+                //将infoText值插入到id为info的div中
             })
         })
         // var oInp = document.getElementById("inp");
