@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>行元素，块元素，行块元素</title>
+    <style>
+        /* 块元素，新块元素另起一行显示，设置的高宽有效 */
+        div {
+            width: 100px;
+            height: 100px;
+            /* 将块元素设置为行元素，设置的width和height失效，高宽由内容决定 */
+            /* display: inline; */
+            /* 设置为inline-block,特点：保留高宽，同行显示 */
+            /* display: inline-block; */
+        }
+
+        .div1 {
+            background-color: red;
+        }
+
+        .div2 {
+            background-color: blue;
+        }
+
+        /* 行元素，新行元素同行显示，设置的width和height失效，高宽由内容决定 */
+        span {
+            width: 100px;
+            height: 100px;
+            /* 将行元素设置为块元素，新元素另起一行显示，设置的高宽生效 */
+            /* display: block; */
+            /* 设置为inline-block,特点：保留高宽，同行显示 */
+            /* display: inline-block; */
+        }
+
+        .span1 {
+            background-color: green;
+        }
+
+        .span2 {
+            background-color: yellow;
+        }
+
+        /*总结：
+        行元素同行排布，块元素另起一行排布
+        行元素的设置的高宽无效，高宽由内容决定，块元素设置的高宽生效
+        行元素的外边距左右生效上下无效，块元素无限制 
+        行块元素：同行显示，高宽有效，外边距都有效*/
+    </style>
+</head>
+<body>
+    <div class="div1">123</div>
+    <div class="div2">456</div>
+    <span class="span1">aaa</span>
+    <span class="span2">bbb</span>
+</body>
+
+</html>

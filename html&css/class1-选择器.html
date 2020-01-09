@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择器</title>
+    <style>
+        /* 元素选择器 */
+        div{
+            color: red;
+        }
+
+        /* 类选择器 */
+        .div1{
+            /* 设置字体：斜体 */
+            font-style: italic;
+        }
+        .div2{
+            /* 设置字体：浏览器默认字体 */
+            font-style: normal;
+        }
+
+        /* id选择器 */
+        #div4{
+            /* 设置字体大小：基于父元素地百分比大小，此处地父元素为body，字体大小为浏览器默认字体大小 */
+            font-size: 100%;
+        }
+        #div5{
+            /* 设置字体大小：基于父元素的2倍大。 */
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div>hello world</div>
+    <div>hello xiaoming</div>
+    <div class="div1">123</div>
+    <div class="div1">456</div>
+    <div class="div2">789</div>
+    <div id="div3">aaa</div>
+    <div id="div4">bbb</div>
+    <div id="div5">ddd</div>
+</body>
+</html>
