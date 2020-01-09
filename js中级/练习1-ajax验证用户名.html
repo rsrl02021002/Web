@@ -32,7 +32,7 @@
             var infoText = "可用";
             //新建一个数据，赋值为“可用”
             $.get("https://api.myjson.com/bins/l8pz0",function(res){
-            //调用$.get()方法，括号里为json文件，自定义的功能
+            //调用$.get()方法，括号里为json文件，自定义的函数，这个函数是回调函数
                 var names = res.name;
                 //新建一个数据，赋值为res的name
                 for(var i=0;i<names.length;i++){

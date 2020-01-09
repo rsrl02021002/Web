@@ -21,12 +21,13 @@
 <body>
 
     <button id="send">send</button>
+    <div id="show"></div>
 
     <script>
         var oBtn = document.getElementById("send");
 
         oBtn.onclick = function () {
-            //   //第一步创建 XMLHttpRequest 对象
+            //第一步创建 XMLHttpRequest 对象
             var xmlhttp;
             if(window.XMLHttpRequest){
                 xmlhttp = new XMLHttpRequest
@@ -35,13 +36,14 @@
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
             //第二部向服务器发送请求
+                //网址"https://api.myjson.com/bins/15d67w"是可变的参数
             xmlhttp.open("GET","https://api.myjson.com/bins/15d67w",true);
             xmlhttp.send();
             //第三步响应返回结果
             xmlhttp.onreadystatechange = function (){
                 if(xmlhttp.readyState == 4 && xmlhttp.Status == 200){
                     var res = JSON.parse(xmlhttp.responseText)
-                    console.log(res.name)
+                    
                 }
             }
 

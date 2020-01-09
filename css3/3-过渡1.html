@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 1px dashed black;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* transform: scale(0.5); */
+            /* 缩放 */
+            /* transform-origin:center center ; */
+            /* 定位 */
+            /* transition: all 1s ease 1s; */
+            /* 鼠标移出 */
+        }
+        .div1:hover{
+            transform: rotate(45deg);
+            /* width: 400px; */
+            /* transition-property: width; */
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="div1">
+         </div>
+    </div>
+    
+</body>
+</html>

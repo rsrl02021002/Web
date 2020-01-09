@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 1px dashed black;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* animation: foo 1s ease; */
+            animation-name: foo;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            /* animation-fill-mode: backwards; */
+            /* 保持开始时的状态 */
+            animation-iteration-count:infinite;
+        }
+        @keyframes foo {
+            from{
+                width: 200px;
+            }
+            to{
+                width: 400px;
+                opacity: 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="div1">
+         </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+            /* 观察者，设置3D效果时必须写的一条属性，效果是元素的子类距离观察者的距离 */
+            background-color: black;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed red;
+            position: relative;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            /* animation:foo 3s linear infinite; */
+            animation-timing-function: linear;
+            /* 设置对象动画的过渡类型 */
+            animation-iteration-count: infinite;
+            /* 设置对象动画的循环次数 */
+            /* 值：infinite无限循环；number循环次数 */
+            }
+            @keyframes foo{
+                from{
+                    transform:rotateY(0);
+                }
+                to{
+                    transform:rotateY(360deg);
+                }
+        }
+        .box1 div{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,255,255, 0.5);
+            color: black;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .front{
+            transform: translateZ(100px)
+        }
+        .back{
+            transform: rotateY(-180deg) translateZ(100px);
+        }
+        .left{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .right{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .top{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="front">1</div>
+        <div class="back">2</div>
+        <div class="left">3</div>
+        <div class="right">4</div>
+        <div class="top">5</div>
+        <div class="bottom">6</div>
+    </div>
+</body>
+</html>

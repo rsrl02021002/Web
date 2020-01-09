@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1、写出下列输出结果
+        var x = 10;
+        function test() {
+        //  function window.test() {    
+            this.x = 20
+            // window.x = 20;
+            console.log(this.x)
+        }
+        test()
+
+
+        //2、写出下列输出结果
+        var name = "window"
+        var obj = 
+        {
+            name: "obj",
+
+            func1: function () 
+            {
+                console.log(this.name);
+                //obj.func1()
+                //this指向obj
+                
+                (
+                    function () 
+                    {
+                        console.log(this.name)
+                    }
+                )()
+                //window在调用这个立即执行函数
+
+                function foo(){
+                    console.log("aaa");
+                    function foo2(){
+                        console.log("bbb");
+                    }
+                }
+
+                foo();
+                // 仅执行console.log("aaa");
+                // foo2()是嵌套函数，在不改变this指向的时候，看成window.foo2()
+
+
+
+                //匿名函数被括号括起来，外面的后面再加一对括号，这样的函数是立即执行函数，放在主程序执行
+                //没有起名字的函数叫做匿名函数
+                //立即执行函数，故名思意，到他了立即执行
+            }
+        }
+        obj.func1()
+        //obj
+        //obj错误
+        
+        //正解：
+        //obj
+        //window
+        //立即执行函数，作用域为全局
+
+        //3、写出下列结果
+        var name = "the window";
+
+        var object = {
+            name: "My Object",
+            getName: function () {
+                return this.name;
+            }
+        }
+
+        object.getName();
+
+        (object.getName)();
+        //此格式不是引用object.getName
+        //加括号(object.getName)()与不加括号object.getName()，一样
+
+
+        (object.getName = object.getName)();
+        //出现了赋值，此处为运算
+        //1//(object.getName = object.getName)();
+        //2//(object.getName = function () {
+                // return this.name;
+            // })();
+        //3// function () {
+            // return this.name;
+        // }
+        //所以此时指向了window
+
+        //My Object
+        //
+
+        //4、下列代码中当div的点击事件触发时输出的结果是？
+        document.getElementById("div").onclick = function () {
+            console.log(this)
+        };
+
+        //5、请写出下列代码运行结果
+        var name = "window"
+        var obj = {
+            name: "obj"
+        }
+        window.setInterval(function () {
+            console.log(this.name)
+        }, 300)
+        window.setInterval(function () {
+            console.log(this.name)
+        }.call(obj), 300)
+
+        //没有返回值的函数，被赋值给一个变变量，传给变量的是undefind
+        foo2(foo);
+        //函数体
+        foo2(foo());
+        //undefind
+
+
+
+
+        //6、请补全下列代码
+        function foo() {
+            //补全此处代码实现每隔一秒输出 hello world
+        }
+        window.setInterval(foo(), 1000);
+
+
+        // 7、补全下列代码实现 1+2+3+4
+        function add(c, d) {
+            return this.a + this.b + c + d;
+        }
+        /*
+          在此补全代码 以两种以上方法实现
+        */
+
+
+        //8、写出下列输出结果
+        function f() {
+            return this.a;
+        }
+
+        var g = f.bind({ a: "azerty" });
+        console.log(g());
+
+        var h = g.bind({ a: 'yoo' });
+        console.log(h());
+        //多次bind，只绑定第一次
+
+        var o = { a: 37, f: f, g: g, h: h };
+        console.log(o.f(), o.g(), o.h());
+        //绑定以后，this发生一次变化后，不再继续发生变化
+
+        //9、补全下列代码
+        var o = { prop: 37 };
+
+        function independent() {
+            return this.prop;
+        }
+
+        //在此补全代码
+
+        console.log(o.f()); // logs 37
+
+    //10、用call 或 apply 实现bind 方法
+    </script>
+</body>
+
+</html>

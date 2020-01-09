@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            border: 1px dashed black;
+            position: relative;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top:50%;
+            left:50%;
+            /* 水平垂直居中方法一 */
+            /* margin-top: -100px;
+            margin-left: -100px; */
+            /* 水平垂直居中方法二 */
+            transform: translate(-50%,-50%);
+            /* 此方法重名，两次使用transform，不能实现所要效果 */
+            /* transform: translateX(-50%);
+            transform: translateY(-50%); */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <span class="div1">
+            hello world<br>
+            hello world<br>
+            hello world<br>
+            hello world
+         </span>
+    </div>
+    
+</body>
+</html>
