@@ -1,0 +1,105 @@
+<!-- 设置margin属性，后代选择器生效
+设置字体颜色，后代选择器失效
+为什么？ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>其他选择器</title>
+    <!-- 摘要：伪类选择器:,后代选择器 ,与子元素选择器>-->
+    <!-- 注意：对操作对象使用伪类，与父元素无关 -->
+    <style>
+        /* 伪类选择器：start */
+        /* 第一个对象 */
+        .ul1 li:first-child{
+            color: red;
+        }
+        /* 自定义数字，选择操作对象 */
+        .ul1 li:nth-child(2){
+            color: green;
+        }
+        /* 等差数列式地选择操作对象 */
+            /* 此处2n+1可用odd替换，选择的都是奇数行 */
+        .ul2 li:nth-child(odd){  
+        /* .ul2 li:nth-child(2n+1){ */
+            color: blue;
+        }
+            /* 此处2n可用even替换，选择的都是偶数行 */
+        .ul2 li:nth-child(even){
+        /* .ul2 li:nth-child(2n){ */
+            color: yellow;
+        }
+        /* 伪类选择器end */
+        /* 后代选择器start */
+        /* 使用空格，会影响当前元素下的所有后代，只要后代是空格后的元素 */
+        .ul3 li{
+            /* color: red; */
+            margin: 10px;
+        }
+        /* 后代选择器end */
+        /* 子元素选择器start */
+        /* 使用>，只会影响>前元素的子元素，不会影响第二层(孙子元素)或更多层元素 */
+        .ul5>li{
+            margin: 10px;
+            /* color: blue; */
+        }
+        /* 子元素选择器end */
+        /* 设置margin属性，后代选择器生效
+        设置字体颜色，后代选择器失效
+        为什么？ */
+    </style>
+
+</head>
+<body>
+    <ul class="ul1">
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+        <li>aaa</li>
+        <li>bbb</li>
+    </ul>
+    <hr>
+    <ul class="ul2">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+        <li>777</li>
+        <li>888</li>
+        <li>999</li>
+        <li>000</li>
+    </ul>
+    <hr>
+    <ul class="ul3">
+        <li>1</li>
+        <li>2</li>
+        <li>3
+            <ul class="ul4">
+                <li>31</li>
+                <li>32</li>
+                <li>33</li>
+            </ul>
+        </li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <hr>
+    <ul class="ul5">
+        <li>1</li>
+        <li>2</li>
+        <li>
+            <ul class="ul6">
+                <li>31</li>
+                <li>32</li>
+                <li>33</li>
+            </ul>
+        </li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
