@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 通配符选择器(*)1<元素选择器10<类选择器100<id选择器1000<内联选择器10000<！important选择器100000 -->
+    <!-- 同时使用多个选择器，权重值相加，可以提高权重。
+    即使同时使用n个类选择器，权重值很大，也不能优先于id选择器。权重值仅作为参考。 -->
+    <style>
+        *{
+            color: red;
+            /* color: red !important; */
+        }
+        div{
+            color: green;
+        }
+        .div2{
+            color: blue;
+        }
+        .div3{
+            color: yellow;
+        }
+        .div3,.name{
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <span>123</span>
+    <div class="box">
+        <div class="div1">hello</div>
+        <div class="div2">world</div>
+        <div class="div3 name">xiaoming</div>
+        <div class="div4" style="color: pink;">aaa</div>
+    </div>
+</body>
+</html>
