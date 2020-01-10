@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景图片</title>
+    <!-- 摘要：background-size:cover覆盖，contain填充
+        使用contain时，设置background-repeat:no-repeat,可不重复 -->
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 0 auto;
+            background-image: url(./img/水晶.jpg);
+            /* 覆盖，如果图片过大，会裁剪，按照某一边，最短的那条边，覆盖图片，过长的那条边被裁剪 */
+            /* background-size: cover; */
+            /* 填充，图片完整显示，如果不能填充满，则会重复 */
+            background-size: contain;
+            /* 配合background-size:contain使用，值为no-repeat时，不重复 */
+            /* background-repeat: no-repeat; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
