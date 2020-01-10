@@ -5,9 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>定位-float</title>
+    <style>
+        .box{
+            background-color: yellow;
+            border: 1px solid black;
+        }
+        .box div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            /* 1*子元素设置为float，脱离文档流 */
+            float: left;
+        }
+        .div1{
+            background-color: red;
+        }
+        .div2{
+            background-color: blue;
+        }
+        /* 2.1*设置p标签属性clear: both; */
+        /* .box p{
+            clear: both;
+        } */
+        /* 2.2*设置伪元素，再设置三条属性 */
+        /* 这里封装成一个类，以后再使用可以直接调用clearfix类，一个元素可以有多个类 */
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* 1*概念：文档流。代码按顺序执行，像水流一样。
+            设置为float的元素，会脱离文档流，所以会出现.box高度为0，子元素div脱离了文档流，父元素里面没有内容撑起高度。 */
+
+         /* 脱离文档流，会带来我们不想要的布局，如何清除float带来的负面影响呢？ */
+         /* 2*解决方法：
+         2.1*添加p标签，设置clear:both属性。不推荐使用，下一个方法常用。
+         2.2*设置伪元素，内容为空，默认的行元素改为块元素，关键属性clear:both清除float的负面效果  */
+
+    </style>
 </head>
 <body>
-    <!-- 文档流 float元素脱离文档流 clear:both清除float造成的负面影响
-    伪元素选择器，理解为假标签 -->
+    <div class="box clearfix">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <!-- 2.1*添加p标签，设置属性clear:both,能够解决问题，但是凭空添加一个p标签，感觉不太好，更好的解决办法2.2*：伪元素  -->
+        <!-- <p>hello</p> -->
+    </div>
 </body>
 </html>
