@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    全局，局部
+    方法内外，定义位置
+
+    任务队列  主线程(执行栈)  event loop（事件循环）
+
+    函数作为参数传递，叫做函数式编程
+
+    变量提升：有变量定义，提升到当前域最顶端
+
+    全局变量，不影响局部域
+
+    函数允许，先调用，后定义
+
+    变量提升 函数提升  同时提升，变量提升优先级高于函数提升
+
+    this---------------------------------
+    作用域链，逐层往上找，直到找到
+
+    闭包：两个函数有嵌套，内部函数引用了外部函数的变量，造成外部变量在内存中，不会被销毁
+
+
+    this
+    谁调用，执行谁
+    专业用语：context 执行上下文
+    出现函数嵌套，内部函数默认指向window
+    函数嵌套，内部函数可以引用外部函数的变量
+    .call()可以改变this指向，（参数1，参数2），第二个参数开始，是传递的参数
+    .apply()，只能传递两个参数，第二个参数是数组
+    .call() .apply() 立即执行
+    .bind()，可以传递多个参数，只绑定，不执行，若要执行，定义新参数，赋值绑定的函数，新参数加括号
+
+    原型----------------------------------
+    var arr = [];
+    var arr =new Array();
+    .push("")向数组里添加
+    arr.push("a");
+    console.log(arr);
+    输出结果是数组
+
+
+    console.log(Array.prototype);原型调用prototype方法
+    console.log(arr.__proto__);实例化的对象调用proto方法
+
+    arr.fellow();向原型添加方法
+    Array.prototype.fellow = function(){
+        console.log("hello");
+    }
+
+
+
+    只有实参，没有形参
+    (arguments)
+
+</body>
+</html>

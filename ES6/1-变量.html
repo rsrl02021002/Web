@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul> -->
+    <script>
+        //方案1：
+        // var aLi = document.getElementsByTagName("li");
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].index = i;
+        //     aLi[i].onclick = function(){
+        //         // console.log(i);
+        //         console.log(this.index);
+        //     }
+        // }
+
+        //方案2： 闭包i
+        // var aLi = document.getElementsByTagName("li");
+        // for(var i=0;i<aLi.length;i++){
+        //     (function(index){
+        //         aLi[i].onclick = function(){
+        //             console.log(index);
+        //         }
+        //     })(i)
+        // }
+
+        //方案3：let块作用域
+        // var aLi = document.getElementsByTagName("li");
+        // for(let i=0;i<aLi.length;i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // 内部作用域引用外部作用域变量，外部作用域变量不会释放
+
+        // console.log(a);
+        // var a = 10;
+        // undefined
+
+        // var a = 10;
+        // var a = "abc";
+        // 重复命名
+        
+        // console.log(a);
+        // let a = 10;
+        // 没有变量提升
+
+
+        // let a = 10;
+        // let a = "abc";
+        // 报错
+
+        // var a = 10;
+        // console.log(window.a);
+        // 全局变量
+
+        // let a = 10;
+        // console.log(window.a);
+        // undefind
+        // 块作用域
+
+        // if(true){
+        //     var a = 10;
+        // }
+        // function foo(){
+        //     // var b = "abc";
+        //     b = "abc";
+        // }
+        // foo();
+        // console.log(b);
+        // console.log(a);
+        // function改变变量作用域，if不改变
+
+        // if(true){
+        //     let a = 10;
+        //     console.log(a);
+        // }
+        // console.log(a);
+        // let特性：花括号内声明的，是局部变量
+        // 块作用域
+
+        // console.log(a);
+        // const a = 10;
+        // 无变量提升
+        
+        // const a = 10;
+        // const a = 20;
+        // 无重复命名
+
+        // const obj = {
+        //     name:"abc";
+        // }
+        // obj.name="bcd";
+        // console.log(obj);
+        // 基本数据类型，存栈
+        // 引用数据类型，栈存地址，堆存值，此处只改变了值，没有改变地址
+
+        // const obj = {
+        //     name:"abc"
+        // }
+        // obj={};
+        // console.log(obj);
+        // 修改了栈，报错
+
+        // const obj = {
+        //     name:"abc"
+        // }
+        // Object.freeze(obj)
+        // obj.name="bcd";
+        // console.log(obj);
+        // 冻结，不许被修改
+
+        // let arr = ["hello","world","fellow"];
+        // let a = arr[0],b = arr[1],c = arr[2];
+        // console.log(a,b,c);
+
+        // let [a,b,c] = ["hello","world","fellow"];
+        // console.log(a,b,c);
+        // 数组解构赋值，通过索引
+
+        // let [a,b,c] = [1,[2,3],4];
+        // console.log(a,b,c);
+
+        // let [a,[b,c],d] = [1,[2,3],4];
+        // console.log(a,b,c,d);
+
+        // let obj = {
+        //     name:"abc",
+        //     age:20
+        // }
+        // let name = obj.name;
+        // let age = obj.age;
+
+        // let {name,age}={name:"abc",age:20};
+        // console.log(name,age);
+        // 同名
+
+        // let {name:a,age:b}={name:"abc",age:20};
+        // console.log(a,b);
+        // 其他名称接收
+
+        // let [a,b,c,d]="hello";
+        // console.log(a,b,c,d);
+        // 解构字符串
+
+        // let str = "hello";
+        // console.log(str[0]);
+        // console.log(str,charAt(0));
+        // 解构字符串
+
+        // function foo(){
+        //     return {name:"abc",age:20}
+        // }
+        // // var obj = foo();
+        // var {name,age}=foo();
+        // console.log(name,age);
+        // 对象解构的应用场景
+
+        var a = 1;
+        var b = 2;
+
+        // 方案1
+        // let temp = 0;
+        // temp = a+b;
+        // a=b;
+        // b=temp-a;
+        // console.log(a,b);
+
+        // 方案2
+        // var [a,b]=[b,a];
+        // console.log(a,b);
+
+        // 方案3
+        // var a = [b,b=a][0];
+        // console.log(a,b);
+        // 解构赋值
+    </script>
+</body>
+</html>

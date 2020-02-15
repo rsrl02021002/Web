@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,3,4,5];
+
+        // // 方案一：splice
+        // function unique(arr){
+        //     for(var i=0;i<arr.length;i++){
+        //         for(var j=i+1;j<arr.length;j++){
+        //             if(arr[i]==arr[j]){
+        //                 arr.splice(j,1);//从第j个开始移除，移除1个
+        //                 j--;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // console.log(unique(arr));
+
+        // //方案二：indexOf和新数组
+        // function unique(arr){
+        //     var newArr = [];
+        //     for(var i=0;i<arr.length;i++){
+        //         if(newArr.indexOf(arr[i]) == -1){
+        //             newArr.push(arr[i]);
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // console.log(unique(arr));
+
+        //方案三：
+        function unique(arr){
+            
+        }
+
+
+
+        let arr = [1,5,3,6,2,4];
+        console.log(arr.sort());
+
+        let arr2 = [1,15,3,6,2,4];//字符串排序
+
+        
+        
+    </script>
+</body>
+</html>

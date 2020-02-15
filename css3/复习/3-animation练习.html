@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1611769_se4dfgzz2fd.css">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px dotted black;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation-name: foo;
+            animation-timing-function: ease;
+            animation-duration: 0.01s;
+            animation-iteration-count: infinite;
+        }
+        .icon-fu{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 50px;
+        }
+        @keyframes foo{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: all 1s ease;
+        }
+        .active{
+            width: 300px;
+            height: 300px;
+        }
+        /* .box2:hover{
+            width: 300px;
+            height: 300px;
+        } */
+        
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+        <div class="div1"></div>
+    </div>
+    <i class="iconfont icon-fu"></i> -->
+    <div class="box2"></div>
+    <button id="btn">放大</button>
+    <script>
+        var oBox = document.getElementsByClassName("box2");
+        var oBtn = document.getElementById("btn");
+        oBtn.on("click",function(){
+            // oBox.addClass("active");
+            oBox.classList.add("active");
+        })
+    </script>
+</body>
+</html>

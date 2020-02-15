@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <input type="text" id="inp">
+    <p id="show"></p>
+    <script>
+       
+
+        function ajaxGet(){
+             // 第一步，创建xmlhttprequest对象
+        var xmlhttp
+        // 能力测试
+        if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }
+        else{
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        // 第二步，发送get请求
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send();
+
+        // 第三步，服务器响应
+        xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                // xmlhttp.responseText
+                // console.log(xmlhttp.responseText)
+                var res = JSON.stringify(xmlhttp.responseText)
+                fun(res);
+                // $("#inp").val()
+            }
+        }
+
+        }
+        var url = "https://api.myjson.com/bins/1ghtaq"
+
+        var oInp =document.getElementById("inp");
+        var oInfoText = document.getElementById("")
+
+
+        ajaxGet(url,function(res){
+            console.log(res)
+        })
+    </script>
+</body>
+</html>

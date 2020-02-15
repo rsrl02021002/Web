@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let school = "林大";
+        // let obj={
+        //     name:"小a",
+        //     age:20
+        // }
+        // obj.school = school;
+        // // // 链式操作，添加属性
+        // console.log(obj);
+
+        // let school = "林大";
+        // let obj={
+        //     name:"小a",
+        //     age:20,
+        //     school:school
+        // }
+        // console.log(obj);
+        
+        // let school = "林大";
+        // let obj={
+        //     name:"小a",
+        //     age:20,
+        //     school
+        // }
+        // console.log(obj);
+
+        // let school = "林大";
+        // let obj={
+        //     name:"小a",
+        //     age:20,
+        //     school:school,
+        //     showInfo:function(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // obj.showInfo();
+
+        // let school = "林大";
+        // let obj={
+        //     name:"小a",
+        //     age:20,
+        //     school:school,
+        //     showInfo(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // obj.showInfo();
+    
+            // let thisName = "name";//设置一个变量
+            // let obj = {
+            //     name:"小a"
+            // }
+            // console.log(obj[thisName]);
+            // // 对象的属性的一种引用方式
+            
+        // let a = 3;
+        // let arr = [];
+        // let arr2 = [];
+        // console.log(Object.is(arr,arr2));
+        // // false地址不同
+
+        // // Object.is()和===的区别
+        // console.log(-0===+0);
+        // console.log(Object.is(-0,+0));
+        // console.log(NaN === NaN);
+        // console.log(Object.is(NaN,NaN));
+
+        // let obj = {
+        //     name:"小a"
+        // }
+        // let obj2 = {
+        //     age:20
+        // }
+
+        // Object.assign(obj,obj2)
+        // console.log(obj);
+        // console.log(obj2);
+        // // 把后面对象所有属性，合并到前面的对象
+
+        // let obj = {
+        //     name:"小a"
+        // }
+        // let obj2 = {
+        //     age:20
+        // }
+        // let obj3 = {
+        //     school:"黑大"
+        // }
+
+        // Object.assign(obj,obj2,obj3);
+        // obj3.school="理工";
+        // console.log(obj);
+
+        // let obj = {
+        //     name:"小a"
+        // }
+        // let obj2 = {
+        //     age:20
+        // }
+        // let obj3 = {
+        //     school:"黑大",
+        //     student:{
+        //         name:"小b"
+        //     }
+        // }
+
+        // Object.assign(obj,obj2,obj3);
+        // obj3.student.name="小c";
+        // console.log(obj);
+        // // 多层，可以修改里面的值
+
+        // let obj = {
+        //     name:"小a"
+        // }
+        // console.log("name" in obj);
+        // // 判断对象中是否有某条属性
+        // console.log(obj.hasOwnProperty("name"));
+        
+        // let obj = {
+        //     name:"小b"
+        // }
+        // console.log(obj.school);
+        // undefined
+        
+    // function Person(){
+    //     this.name = "小b";
+    // }
+    // Person.prototype.school = "理工";
+    // let student = new Person();        
+    // // console.log("name" in student);
+    // // console.log(student.hasOwnProperty("name"));
+    // console.log(student.school);
+    // console.log("school" in student);
+    // console.log(student.hasOwnProperty("school"));//不去原型上找
+
+    // function Person(){
+    //     this.name = "小b";
+    //     this.school = "黑大";
+    // }
+    // Person.prototype.school = "理工";
+    // let student = new Person();        
+    // console.log(student.school);//原型链 先从原型上找
+    // console.log("school" in student);
+    // console.log(student.hasOwnProperty("school"));//不去原型上找
+
+                
+    </script>
+</body>
+</html>

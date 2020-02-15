@@ -18,24 +18,72 @@
 
   <script>
 
-    var obj = {
+    // var obj = {
 
-      name:["test1","test2","test3"]
+    //   name:["test1","test2","test3"]
 
-    }  
+    // }  
 
 
 
-    console.log(obj)
+    // console.log(obj)
 
-    var jsonStr = JSON.stringify(obj);
+    // var jsonStr = JSON.stringify(obj);
 
-    console.log(jsonStr)
+    // console.log(jsonStr)
 
-    var jsonObj = JSON.parse(jsonStr);
+    // var jsonObj = JSON.parse(jsonStr);
 
-    console.log(jsonObj);
+    // console.log(jsonObj);
 
+    // 数据格式
+    // 前后端数据交互
+    // var obj = {
+    //   name:"xiaoming",
+    //   age:20
+    // }
+    // var goods = {
+    //   "title":"xxx",
+    //   "price":1000,
+    //   "num":1000
+    // }
+    // var goodsList = [
+    //   { title:"xxx",
+    //   price:1000,
+    //   num:1000},
+    //   { title:"xxx",
+    //   price:1000,
+    //   num:1000}
+    // ]
+    // var obj = {
+    //   name:"xiaoming",
+    //   age:20
+    // }
+    // 数据转换,转换成字符串
+    // var str = JSON.stringify(obj)
+    // 如何把JSON类型字符串转换成对像
+    // JSON.parse(str)
+
+
+
+    // var obj = {
+    //   name:"xiaoming",
+    //   age:20
+    // }
+    // console.log(JSON.stringify(obj))
+
+    var nameList = [
+      {
+        name:"test1"
+      },
+      {
+        name:"test2"
+      },
+      {
+        name:"test3"
+      }
+    ]
+    console.log(JSON.stringify(nameList))
   </script>
 
 </body>

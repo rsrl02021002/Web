@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj = {
+        //     name:"xx",
+        //     age:20,
+        //     school:"理工"
+        // }
+        // let obj2 = obj;//浅拷贝
+        // // 指向同一地址
+        // obj.name = "小a";
+        // console.log(obj2);
+
+        // let obj = {
+        //     name:"xx",
+        //     age:20,
+        //     school:"理工"
+        // }
+        // let obj2 = {};
+        // Object.assign(obj2,obj);//深拷贝
+        // obj.name = "小a";
+        // console.log(obj2);
+        
+        // let obj = {
+        //     name:"xx",
+        //     age:20,
+        //     school:"理工"
+        // }
+        // let obj2 = {...obj};//扩展 深拷贝
+        // obj.name = "小a";
+        // console.log(obj2);
+// !!!
+        // let obj = {
+        //     name:"xx",
+        //     age:20,
+        //     school:"理工"
+        // }
+        // let obj2 = {};
+        // // 对象的属性如何遍历
+        // for(let key in obj){
+        //     // console.log(key);
+        //     // console.log(obj[key]);
+        //     // console.log(key+"="+obj[key]);
+        //     obj2[key] = obj[key]
+        // }
+        // obj.name = "小a";
+        // console.log(obj2);
+
+        // let obj = {
+        //     name:"xx",
+        //     age:20,
+        //     school:"理工",
+        //     student:{
+        //         name:"小a"
+        //     }
+        // }
+        // let obj2={}
+        // Object.assign(obj2,obj);
+        // obj.student.name = "小b";
+        // console.log(obj2);
+        // // 单层拷贝
+
+//重要：深克隆
+        // 深克隆
+        function deepClone(target){
+            // 第一步 定义结果变量
+            let result;
+            // 判断基本数据类型和引用数据类型
+            if(typeof target === "object"){
+                // 判断数组或对象
+                if(Array.isArray(target)){
+                    result = []//把结果变量变成数组
+                    for(let val of target){
+                        result.push(deepClone(val))//递归  
+                    }
+                }else{
+                    result = {};//把结果变成对象
+                    for(let item in target){
+                        result[item] = deepClone(target[item])
+                    }
+                }
+
+            }else{
+                result = target;
+            }
+
+            // 最后一步 返回结果变量
+            return result;
+        }
+        // let obj = {
+        //     name:"xx",
+        //     age:20,
+        //     school:"理工",
+        //     student:{
+        //         name:"小a"
+        //     }
+        // } 
+        // let obj2 = deepClone(obj);
+        // obj.student.name = "小b";
+        // console.log(obj2);
+
+        let arr = [1,2,["a","b"],4,5];
+        let arr2 = deepClone(arr);
+        arr[2][0] = "hello"
+        console.log(arr2);
+           
+
+        // let str = "hello";
+        // let obj = {};
+        // let arr = [];
+        // // 判断数据类型
+        // console.log(typeof str);//string
+        // console.log(typeof obj);//object
+        // console.log(typeof arr);//object
+        // // 区分对象和数组
+        // console.log(Array.isArray(obj),Array.isArray(arr));
+        // console.log(Object.prototype.toString.call(str));
+        
+        
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function foo(){
+        //     console.log(arguments);
+        // }
+        // foo(1,2,3,4,5,6)
+        // ES5功能
+
+        // function foo(...arg){
+        //     console.log(arg);
+        // }
+        // foo(1,2,3,4,5,6)
+        // 扩展运算符
+
+        // let arr2 = ["a","b","c","d"];
+        // let arr = [1,2,...arr2,3,4];
+        // console.log(arr)
+        // 扩展数组
+        
+        // let arr = ["a","b","c","d"];
+        // let arr2 =arr;
+        // arr2[0]="1";
+        // console.log(arr)
+        // 数组的赋值
+
+        // let arr = ["a","b","c","d"];
+        // let arr2 =[...arr];
+        // arr2[0]="1";
+        // console.log(arr)
+        // 对数组赋值，不是同一个地址了
+         // 数组的赋值
+
+        //  扩展运算符，只做一维扩展，在二维失效
+
+        // let arr = [1,2,3,4,5];
+        // let arr2 = ['a','b','c','d'];
+        // let arr3 = [...arr,...arr2];
+        // console.log(arr3);
+        // 数组合并
+
+        // let obj = {
+        //     name:"abc"
+        // }
+        // let obj2 = {
+        //     age:20
+        // }
+        // let obj3 = {...obj,...obj2}
+        // obj2.age=30;
+        // console.log(obj3);
+        // 拿出了值，不是引用
+
+        // let obj = {
+        //     name:"abc"
+        // }
+        // let obj2 = {
+        //     age:20,
+        //     parent:{
+        //         name:"bcd"
+        //     }
+        // }
+        // let obj3 = {...obj,...obj2}
+        // obj2.parent.name="hello";
+        // console.log(obj3);
+
+        // let arr = ["hello","world"];
+        // // let [a,b] = arr;
+        // let [a,b,c]=["fellow",...arr]
+        // console.log(a,b,c);
+
+        // function foo(a,b,...arg){
+        //     console.log(a,b,arg)
+        // }
+        // foo(1,2,3,4,5,6)
+        // 剩余运算符
+
+        // function foo(a,...arg,b){
+        //     console.log(a,b,arg)
+        // }
+        // foo(1,2,3,4,5,6)
+        // 可不可以把剩余运算符放在参数之间
+        // 不可以，只能放在末尾
+    </script>
+</body>
+</html>

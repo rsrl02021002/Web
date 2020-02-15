@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div id="box">123</div>
+    <div id="box"></div>
+    <script>
+        // 继承，合并
+        //如果已有，后面覆盖前面；如果没有，合并
+        // $.extend(obj1,obj2)
+
+        // 自定义方法
+        // $.fn.extend({
+        //     fellow37:function(str){
+        //         this.text(str)
+        //         console.log(str)
+        //     }
+        // })
+        // $("#box").fellow37("hello")
+
+
+        // $.fn.extend({
+        //     fellow37:function(){
+        //         var defaultPerson = {
+        //             name:"XiaoMing",
+        //             age:20,
+        //             school:"NEFU"
+        //         }
+        //         this.html("<div>学校："+defaultPerson.school+"</div>"+"<div>姓名："+defaultPerson.name+"</div>")
+        //     }
+        // })
+        // $("#box").fellow37()
+            
+
+        $.fn.extend({
+            fellow37:function(obj){
+                var defaultPerson = {
+                    name:"XiaoMing",
+                    age:20,
+                    school:"NEFU"
+                }
+                var obj2 = $.extend(defaultPerson,obj)
+                this.html("<div>姓名："+obj2.name+"</div>"+
+                "<div>年龄："+obj2.age+"</div>"+
+                "<div>学校："+obj2.school+"</div>")
+            }
+            
+        })
+        var RS = {
+            name:"RenShuai",
+            age:23,
+        }
+        $("#box").fellow37(RS)
+        //关键点：  $.extend(defaultPerson,obj)
+    </script>
+</body>
+</html>

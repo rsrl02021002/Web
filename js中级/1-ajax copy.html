@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+        // 第一步，创建xmlhttprequest对象
+    
+    var xmlhttp;
+    // 能力测试
+    if (window.XMLHttpRequest)
+    {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        // 创建对象
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    // 第二步，发送get请求
+    // 请求方式
+    // 数据接口，API地址，
+    // true异步方式
+    xmlhttp.open("GET","https://api.myjson.com/bins/1ghtaq",true);
+    xmlhttp.send();
+    
+    // 第三步，服务器响应
+    
+    xmlhttp.onreadystatechange=function()
+    {
+        // http请求的状态码，200表示当前请求已成功
+        // 500服务端错误，404资源找不到
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            console.log(xmlhttp.responseText)
+        }
+    }
+</script>
+</body>
+</html>

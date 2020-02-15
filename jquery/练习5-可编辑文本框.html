@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style type="text/css">
+    body{
+      font-size:16px;
+    }
+    table{
+      border:1px solid black;
+      border-collapse:collapse;
+      width:400px;
+    }
+    table td,th{
+      width:50%;
+      border:1px solid black;
+      height:30px;
+    }
+    tbody th{
+      background-color:#abc;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+        <tr>
+            <th colspan="2"> 鼠标点击表格就可以编辑</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td class="editable">张三</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="editable">李四</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="editable">王五</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="editable">赵六</td>
+        </tr>
+    </tbody>
+  </table>
+  <script>
+    //点击获取文本内容，元素类型变为input，获取键入的内容，点击框外，失去焦点，返回所有内容，元素类型变为td
+    // 创建一个新元素，替换元素，插入内容
+    // $(".editable").on("click",function(){
+    //     var oCon = $(this).text();
+        // console.log(oCon)
+        // var oInp = document.createElement("<h1>123</h1>")
+        // $(oInp).replaceAll($(this))
+        // $(this).html('<option value=""></option>')
+    // })
+    $(".editable").on("click",function(){
+        if($(this).children().length == 0){
+            var inpText = $(this).text()
+            //创建新元素
+            $inp = $('<input val = ""></input>')
+            $(this).html($inp)
+            $inp.val(inpText)
+            $inp.focus()
+        }
+        // 函数外,没有$inp
+
+        $(".editable").focusout(function(){
+            var inpVal = $(this).find("input").val()
+            console.log(inpVal)
+            //未完，待续
+        })
+        
+    })
+  </script>
+</body>
+</html>

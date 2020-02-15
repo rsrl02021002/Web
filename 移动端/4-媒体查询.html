@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        /* @media(max-width: 500px){
+            小于500px的时候
+            .box{
+                background-color: blue;
+            }
+        } */
+
+        /* @media(min-width: 500px) and (max-width: 1000px){
+            .box{
+                background-color: blue;
+            }
+        } */
+
+        /* 竖屏 */
+        @media(orientation:portrait){
+            .box{
+                background-color: red;
+            }
+        }
+
+        /* 横屏 */
+        @media(orientation: landscape){
+            .box{
+                background-color: blue;
+            }
+        }
+
+        @media(-webkit-device-pixel-radio:2){
+            .box{
+                width: 100px;
+            }
+        }
+        @media(-webkit-device-pixel-radio:3){
+            .box{
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 媒体查询 -->
+    <div class="box"></div>
+</body>
+</html>

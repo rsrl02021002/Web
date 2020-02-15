@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        header,nav,footer{
+            width: 100%;
+            height: 100px;
+            background-color: #999;
+            text-align: center;
+            line-height: 100px;
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+        /* .img img{
+            width: 100%;
+        } */
+        .img{
+            background-image: url("./img/水晶.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 200px;
+        }
+        article{
+            width: 60%;
+            height: 300px;
+            background-color: blue;
+            margin-right: 5%;
+            float: left;
+        }
+        aside{
+            width: 35%;
+            height: 300px;
+            background-color: red;
+            float: right;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        p{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <header>页头</header>
+    <nav>导航</nav>
+    <div class="content">
+        <div class="img">
+            <img src="./img/水晶.jpg" alt="">
+        </div>
+        <article>
+            <p>faddadhuawgdiuawgciuagduigauidgagdigsaiudaduwdhaugduiaauwdaogduoagdougasodugasdgasgdouadoa</p>
+        </article>
+        <aside>
+            <p>2374832h5y45yy58923yh259723t9rg2g972gf792rtg2gf3279tfg7g3fg739gf9732g3fc97g92gf927gfdhoegfogesfueiwgf7g
+            </p>
+        </aside>
+    </div>
+    <footer>页脚</footer>
+</div>
+</body>
+
+</html>

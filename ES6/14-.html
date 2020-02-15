@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* foo(){
+            console.log("0");
+            yield console.log("1");
+            console.log("00");
+            yield console.log("2");
+        }
+
+        let foo2 = foo();
+        foo2.next();//收到命令，执行一次//执行到yield console.log("1")结束
+        // foo2.next();
+    </script>
+</body>
+</html>

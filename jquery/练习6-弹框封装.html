@@ -1,0 +1,71 @@
+<!-- vh vw 视口高度和视口宽度  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #backGround{
+            /* height: 100vh;
+            width: 100vw; */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: fixed;
+            /* display: none; */
+        }
+        #box{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: white;
+            position: relative;
+            top:50%;
+            left:50%;
+            margin-top: -100px;
+            margin-left: -150px;
+        }
+        .nav{
+            height: 30px;
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            line-height: 30px;
+        }
+        .nav span:first-child{
+            float: left;
+            margin-left: 5px;
+        }
+        .nav span:last-child{
+            float: right;
+            margin-right: 5px;
+        }
+        Active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">登陆</button>
+    <div id="backGround">
+        <div id="box">
+            <div class="nav"><span>登陆</span><span class="close">X</span></div>
+            <div class="contain"><h1>登陆</h1></div>
+        </div>
+    </div>
+    <script>
+        $("#btn").on("click",function(){
+            // $("#box").removeClass("noActive")
+        })
+    </script>
+</body>
+</html>
