@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式练习题-转换日期正则</title>
+</head>
+<body>
+</body>
+<script>
+// 日期正则表达式
+// 输入2018-15-08
+// 输出2018年08月15日
+let str = "2018-15-08";
+// let reg = /^\d{4}年\d{2}$月/;
+let reg1 = /^\d{4}/;//年
+let reg2 = /\d{2}$/;//月
+// let reg3 = //;//日
+// console.log(reg1.exec(str)+'年'+reg2.exec(str)+'月'+reg3.exec(str)+'日');
+console.log(reg1.exec(str)+'年'+reg2.exec(str)+'月');
+</script>
+</html>

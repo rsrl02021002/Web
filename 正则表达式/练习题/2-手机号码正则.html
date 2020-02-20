@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式练习题-手机号码正则</title>
+</head>
+<body>
+</body>
+<script>
+// 手机号码正则表达式
+/^0*(13|15)\d{9}$/
+// 正则验证手机号，忽略前面的0。相当于匹配掉开头任意数量的0。
+// ^0*
+// 支持130-139，150-159。
+// (13|15)
+// 忽略前面0之后判断它是11位的。相当于，出去13或15，剩余9位。
+// \d{9}
+// ^开头  &结尾
+// a|b  a或b
+// *表示0次或多次 {0,}
+</script>
+</html>
