@@ -6,13 +6,6 @@
      <p>{{activeType.title}}</p>
  </header>
  <nav>
-     <!-- <ul>
-         <li @click="goPage()">剧集</li>
-         <li>音乐</li>
-         <li>书籍</li>
-         <li>聊天</li>
-         导航按钮改成可配置项
-     </ul> -->
      <ul>
          <li 
          v-for="item in navList" 
@@ -30,7 +23,6 @@
 export default {
 data() {
 return {
-    // activeType:"tv-play",
     activeType:{
         id:1001,
         title:"剧集",

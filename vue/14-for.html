@@ -12,11 +12,31 @@
             <li v-for="(val,key) in arr">{{val}}--{{key}}</li>
         </ul>
     </div>
+    <hr>
+
+    <div id="app2">
+        <ul>
+            <li v-for="(val,key) in objects">索引key：{{key}}--值val：{{val}}</li>
+        </ul>
+    </div>
     <script>
         new Vue({
             el:"#app",
             data:{
                 arr:[1,2,3,4,5,6]
+            }
+        })
+
+        new Vue({
+            el:"#app2",
+            data:{
+                objects:[
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e'
+                ]
             }
         })
     </script>

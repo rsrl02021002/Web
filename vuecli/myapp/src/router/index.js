@@ -1,25 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// 一：引入TvPlay页面
 import TvPlay from '../views/tvplay/TvPlay.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  // 二：配置路由
   {
     path: '/',
-    // path: '/',表示默认页面
     name: 'TvPlay',
     component: TvPlay
   },
   {
+    path: '/tvdetail/:id',
+    name: 'TvDetail',
+    component: () => import('../views/tvplay/TvPlayDetail.vue')
+  },
+  {
     path: '/music',
-    name: 'Music',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/music/Music.vue')
+    name: 'Mucsic',
+    component: () => import('../views/music/Music.vue')
   },
   {
     path: '/book',

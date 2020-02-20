@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <!-- id嵌入根元素 -->
+        <h1>{{product}}</h1>
+    </div>
+    <hr>
+
+    <div id="app2">
+        <ul>
+            <li v-for="product in products">
+                {{product}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+
+    <div id="app3">
+        <ul>
+            <li v-for="product in products">
+                <!-- {"id":1,"quantity":1,"name":"Compass"} -->
+                {{product.quantity}}  {{product.name}}
+                <span v-if="product.quantity === 0">
+                    -OUT PF STOCK
+                </span>
+            </li>
+        </ul>
+        <h2>商品总计：{{totalProducts}}件</h2>
+    </div>
+    <hr>
+</body>
+<script>
+    const app = new Vue({
+        el:'#app',
+        // el对应根元素的id
+        data:{
+            product:'Boots'
+            // vue是响应式的，当改变product值时，页面不用刷新，vue会帮助更新所有用到product元素的地方
+            // 在console控制台中，输入app.product = 'Socks' 页面不用刷新，响应变化
+        }
+    })
+
+    const app2 = new Vue({
+        el:'#app2',
+        data:{
+            products:[
+                'Boots',
+                'jacket',
+                'Hicking socks'
+            ]
+        }
+    })
+
+    const app3 = new Vue({
+        el:'#app3',
+        data:{
+            products:[]
+        },
+        created(){
+            fetch('https://api.myjson.com/bins/74l63')
+            .then(Response => Response.json())
+            .then(json => {
+                this.products = json.products
+            })
+        }
+
+    })
+</script>
+</html>
