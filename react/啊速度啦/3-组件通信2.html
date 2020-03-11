@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件通信-函数写法</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script type="text/babel">
+    let Abc = (props) =>{
+        return(
+            <div>
+                <p>你好，任帅！</p>
+                <p>你好，React！</p>
+                <p>嘿嘿嘿！{props.xxx}！</p>
+            </div>
+        )
+    }
+    let aaa = <Abc xxx="哈哈哈"/>
+    ReactDOM.render(
+        aaa,
+        document.getElementById("demo")
+    );
+</script>
+</html>

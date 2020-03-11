@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎2</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script type="text/babel">
+    let abc = (
+        <div>
+            <p>你好，任帅！</p>
+            <p>你好，React！</p>
+        </div>
+    );
+    ReactDOM.render(
+        abc,
+        document.getElementById("demo")
+    );
+</script>
+</html>

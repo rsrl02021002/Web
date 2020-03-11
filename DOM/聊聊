@@ -1,0 +1,27 @@
+DOM是关于如何获取、修改、添加、删除元素的标准
+所有事物是节点（文档节点、元素节点、文本节点、属性节点、注释节点）
+    常见错误：希望元素节点包含文本。正确说法：元素节点包含文本节点。
+方法是可在节点上执行的动作。
+属性是能够获取或设置的值。
+    innerHTML获取元素内容
+    nodeName规定节点的名称
+        元素：与标签相同；属性：与属性同名；文本：#text；文档：#document
+    nodeValue规定节点的值
+        元素：undefind；文本：本身；属性：属性值
+    nodeType节点类型
+        元素：1；属性：2；文本：3；注释：8；文档：9； 
+访问节点
+    getElementById返回元素
+    getElementByTagName返回列表
+    getElementByClassName返回列表
+修改HTML
+    改变元素内容innerHTML
+    改变样式.style.corlor="red"
+    添加新元素
+        先创建该元素，再追加
+        var aaa=document.createElement("p");
+        var bbb=document.createTextNode("This is new");
+        aaa.appendChild(bbb);
+
+        var ccc=document.getElementById("demo");
+        ccc.appendChild(aaa);

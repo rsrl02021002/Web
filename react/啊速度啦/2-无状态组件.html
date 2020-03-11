@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无状态组件</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script type="text/babel">
+    // 无状态组件  函数组件
+    // 首字母大写  构造函数
+    const Abc = () =>{
+        return(
+            <div>
+                <p>你好，任帅！</p>    
+                <p>你好，React！</p>
+            </div>
+        );
+    }
+
+    const aaa = <Abc />;
+    ReactDOM.render(
+        aaa,
+        document.getElementById("demo")
+    );
+</script>
+</html>

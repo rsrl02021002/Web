@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+    <!--  添加type="text/babel"  成为JSX语法 React在此语法下运行 -->
+    <script type="text/babel">
+        let learnReact = (
+            <p>开始学习react</p>
+        );
+
+        //ReactDOM.render() 将React元素渲染到DOM节点中
+        ReactDOM.render(
+            // <p>你好，任帅！</p>,
+            learnReact,
+            document.getElementById("demo")
+        );
+    </script>
+</html>
